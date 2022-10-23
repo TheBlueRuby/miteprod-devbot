@@ -4,7 +4,8 @@
   "description": "Mite Productions Discord Bot Thing",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "deploy-cmd": "node deploy-commands.js",
+    "start": "node ."
   },
   "author": "TheBlueRuby",
   "license": "ISC",
