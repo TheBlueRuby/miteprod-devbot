@@ -11,7 +11,6 @@ async function createGamesEmbed () {
             value: 'by ' + game.author + '\n\n' + game.desc + '\n'
         };
         gameEmbedData.push(gameEntry);
-        console.log(gameEntry);
     });
 
     console.log('\n' + gameEmbedData);
