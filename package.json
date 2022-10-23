@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Mite Productions Discord Bot Thing",
   "main": "index.js",
+  "engines": {
+    "node": "19.x"
+  },
   "scripts": {
     "deploy-cmd": "node deploy-commands.js",
     "start": "node ."
