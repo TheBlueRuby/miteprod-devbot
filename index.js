@@ -2,6 +2,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 
 const { Client, Collection, GatewayIntentBits } = require('discord.js');
+const { workerData } = require('node:worker_threads');
 
 require('dotenv').config()
 const token = process.env.DISCORD_TOKEN;
@@ -33,7 +34,7 @@ client.on('interactionCreate', async interaction => {
 		await command.execute(interaction);
 	} catch (error) {
 		console.error(error);
-		await interaction.reply({ content: 'Sorry, the command broke. Try reporting this error and explain how to reproduce', ephemeral: true });
+		await interaction.reply({ content: 'Sorry, the command broke. Try again later. If it still won\'t work, try making a GitHub Issue!', ephemeral: true });
 	}
 });
 
