@@ -2,7 +2,10 @@ const fs = require('node:fs');
 const path = require('node:path');
 
 const { REST, SlashCommandBuilder, Routes } = require('discord.js');
-const { clientId, guildId, token } = require('./config.json');
+
+require('dotenv').config()
+const token = process.env.DISCORD_TOKEN;
+const clientId = process.env.CLIENT_ID;
 
 
 const commands = [];
@@ -17,6 +20,6 @@ for (const file of commandFiles) {
 
 const rest = new REST({ version: '10' }).setToken(token);
 
-rest.put(Routes.applicationGuildCommands(clientId, guildId), { body: commands })
+rest.put(Routes.applicationCommands(clientId), { body: commands })
 	.then((data) => console.log(`Successfully registered ${data.length} application commands.`))
 	.catch(console.error);
